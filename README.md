@@ -1,4 +1,4 @@
-# [Demo](https://yegorkochetkov.github.io/calendar-angular-task/)
+# [Demo](https://payever-calendar-angular.vercel.app/calendar/)
 
 ## Task
 
