@@ -1,0 +1,29 @@
+<div
+  cdkDrag
+  [cdkDragData]="appointment?.id"
+  (cdkDragDropped)="drop($event)"
+  class="appointment"
+>
+  <p>
+    <span>{{ appointment?.title }}</span>
+    <span>{{ appointment?.date | date : "d MMMM y, EEEE, HH:MM" }}</span>
+  </p>
+  <div class="buttons">
+    <button
+      mat-icon-button
+      color="accent"
+      type="button"
+      (click)="openEditDialog(appointment!)"
+    >
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      color="accent"
+      type="button"
+      (click)="deleteConfirmation(appointment?.id!)"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

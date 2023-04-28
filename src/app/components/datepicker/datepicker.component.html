@@ -1,0 +1,7 @@
+<mat-card class="calendar-card">
+  <mat-calendar
+    [(selected)]="selected"
+    [startAt]="selected"
+    (selectedChange)="handleSelected()"
+  ></mat-calendar>
+</mat-card>

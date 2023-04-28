@@ -1,0 +1,16 @@
+.mat-dialog-content {
+  min-width: min-content;
+  max-width: 20rem;
+}
+
+.mat-form-field:not(:last-of-type) {
+  margin-right: 0.5rem;
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+.form {
+  padding: 1rem;
+}

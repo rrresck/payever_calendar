@@ -1,0 +1,13 @@
+<h1>{{ title | titlecase }}</h1>
+<button
+  mat-raised-button
+  color="accent"
+  (click)="openDialog()"
+  class="add-button"
+>
+  Add user
+</button>
+<div class="calendar-container">
+  <router-outlet name="datepicker" class="router-outlet"></router-outlet>
+  <router-outlet name="day" class="router-outlet"></router-outlet>
+</div>

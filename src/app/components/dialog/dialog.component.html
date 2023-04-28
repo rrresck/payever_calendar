@@ -1,0 +1,58 @@
+<h1 mat-dialog-title>Add new appointment form</h1>
+<form
+  mat-dialog-content
+  [formGroup]="addNewAppointment"
+  novalidate
+  (ngSubmit)="submit()"
+  class="form"
+>
+  <mat-form-field appearance="outline" class="mat-form-field">
+    <mat-label> Appoinment </mat-label>
+    <input
+      matInput
+      placeholder="Enter appoinment"
+      name="title"
+      type="name"
+      formControlName="title"
+      required
+    />
+    <mat-error *ngIf="addNewAppointment.get('title')?.hasError('required')">
+      Title is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="mat-form-field">
+    <mat-label> Date </mat-label>
+    <input matInput name="date" type="date" formControlName="date" required />
+    <mat-error *ngIf="!addNewAppointment.get('date')?.hasError('required')">
+      Please enter a date
+    </mat-error>
+    <mat-error *ngIf="addNewAppointment.get('date')?.hasError('required')">
+      Date is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="mat-form-field">
+    <mat-label> Hour </mat-label>
+    <mat-select formControlName="hour">
+      <mat-option *ngFor="let hour of hoursToDisplay" [value]="hour">
+        {{ hour }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div mat-dialog-actions class="mat-dialog-actions">
+    <button mat-raised-button color="warn" mat-dialog-close type="button">
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      mat-dialog-close
+      color="primary"
+      type="submit"
+      [disabled]="!addNewAppointment.valid"
+    >
+      {{ buttonActionText }}
+    </button>
+  </div>
+</form>

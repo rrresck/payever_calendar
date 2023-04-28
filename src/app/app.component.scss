@@ -1,0 +1,15 @@
+.calendar-container {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr;
+  min-width: 300px;
+
+  @media (min-width: 760px) {
+    grid-template-columns: 20rem 1fr;
+    min-width: 740px;
+  }
+}
+
+.add-button {
+  margin-bottom: 1rem;
+}

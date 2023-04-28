@@ -1,0 +1,17 @@
+<ul class="hours" cdkDropListGroup>
+  <li
+    *ngFor="let hour of hoursToDisplay; let i = index"
+    class="hours__hour"
+    cdkDropList
+    [cdkDropListData]="i"
+  >
+    {{ hour | date : "H" }}
+    <div *ngFor="let appointment of appointmentsForDate">
+      <app-appointment
+        *ngIf="appointment.date?.getHours() === i"
+        class="appointment"
+        [appointment]="appointment"
+      ></app-appointment>
+    </div>
+  </li>
+</ul>
